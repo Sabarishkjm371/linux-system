@@ -26,3 +26,9 @@ According to above line abc is a void function, it can return address of any fun
  ### Example - 3
  *      char * (* q(int, char)) (int);
  According to above line q is a function it can return address of any function which will take one int and return char pointer.
+
+  ### Example - 3
+ *      char * (* q(int, char)) (int);
+ According to above line q is a function it can return address of any function which will take one int and return char pointer.
+
+ In other words q is a function which takes int and char as arguments and returns a pointer to a function (that function will take int as argument and return char *)
