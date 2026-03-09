@@ -1,9 +1,62 @@
+// Simplefying function pointers using typedef
+
 #include <stdio.h>
 
 int sum(int a, int b);
 int sub(int a, int b);
 
+
+// typedef int * IPTR;
+//Now IPTR is int pointer
+
+// int (*FPRT) (int, int); //FPTR - function pointer
+typedef int (*FPTR) (int, int); // Now FPTR is datatype
+
 int (* abc(void)) (int, int);
+FPTR test(void);
+
+/** The above line can be written as
+ * FPTR abc(void);
+ */
+
+void main () {
+    int i=10, j=20;
+
+    int (*p) (int,int);
+    // Above line can be written as FPRT p;
+    p = abc();
+}
+
+int sum(int a, int b) {
+    return a + b;
+}
+
+int sub(int a, int b) {
+    return a - b;
+}
+
+int (* abc(void)) (int, int) {
+    return sum;
+}
+
+//can be written as 
+// FPTR abc(void) {
+//     return sum;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Need return the address of function
@@ -22,18 +75,3 @@ int (* abc(void)) (int, int);
  *         which will take two integers as params and return integer. 
  * 
  */
-
-void main () {
-    int i=10, j=20;
-
-    int (*p) (int,int);
-    p = abc();
-}
-
-int sum(int a, int b) {
-    return a + b;
-}
-
-int sub(int a, int b) {
-    return a - b;
-}
