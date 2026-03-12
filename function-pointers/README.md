@@ -17,3 +17,4 @@
 2. callback_function.c
 3. func_addr1.c 
 4. func_addr2.c 
+5. func_pointer_2.c

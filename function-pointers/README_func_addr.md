@@ -39,7 +39,7 @@ According to above line abc is a void function, it can return address of any fun
  According to above line abc is normal func which returns char pointer.
 
 
- ### Club ex-4 & 5
+ ### Club ex-4 & 3
 
     char * abc (int);
     char * (* q(int, char)) (int) {
