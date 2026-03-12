@@ -13,7 +13,6 @@ int sub(int a, int b);
 typedef int (*FPTR) (int, int); // Now FPTR is datatype
 
 int (* abc(void)) (int, int);
-FPTR test(void);
 
 /** The above line can be written as
  * FPTR abc(void);
@@ -25,6 +24,8 @@ void main () {
     int (*p) (int,int);
     // Above line can be written as FPRT p;
     p = abc();
+    int res = p(10,20);
+    printf("res = %d\n", res);
 }
 
 int sum(int a, int b) {
@@ -35,14 +36,14 @@ int sub(int a, int b) {
     return a - b;
 }
 
-int (* abc(void)) (int, int) {
-    return sum;
-}
-
-//can be written as 
-// FPTR abc(void) {
+// int (* abc(void)) (int, int) {
 //     return sum;
 // }
+
+//can be written as 
+FPTR abc(void) {
+    return sum;
+}
 
 
 
